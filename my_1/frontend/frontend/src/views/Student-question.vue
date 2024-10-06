@@ -25,6 +25,8 @@
           <button v-if="isAnswerSubmitted && isCorrect && canShowNext" @click="nextQuestion" class="next-question-btn">下一题</button>
           <p v-if="isAnswerSubmitted" :class="{ 'correct': isCorrect, 'wrong': !isCorrect }">{{ result }}</p>
           <img v-if="isAnswerSubmitted" :src="analysisImagePath" alt="解析图片" class="analysis-image">
+          <!-- 添加学习按钮 -->  
+          <el-button type="info" @click="goToLearningVideo">学习视频</el-button>
         </div>
       </el-main>
     </div>
@@ -195,6 +197,12 @@ export default {
     }
   }
 };
+methods: {  
+  goToLearningVideo() {  
+    window.open('【《电路分析基础》 北京邮电大学 李巍海】https://www.bilibili.com/video/BV1cp4y1P7uA?p=29&vd_source=4c56a3b2a9892d2cb345c9b25ad2c755', '_blank');  
+  },  
+  // 其他方法...  
+} 
 </script>
 
 <style scoped>
